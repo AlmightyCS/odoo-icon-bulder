@@ -15,7 +15,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -53,7 +53,7 @@
         function generate() {
             document.getElementById("icon").innerHTML = '';
             let icon = new IBO_ICON({
-                'font_color': document.getElementById('iconFontColor').value,
+                'font_color': document.getElementById('iconBackgroundColor').value,
                 'font_family': document.getElementById('iconSet').value,
                 'font_size': document.getElementById('iconFontSizeValue').value,
                 'font_weight': document.getElementById('fontWeight').value,
@@ -78,6 +78,10 @@
 
         function populateIconSetWebsite() {
             switch (document.getElementById('iconSet').value) {
+                case "Font Awesome 6.5.2":
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v6.5.2/icons"
+                    document.getElementById('iconClass').placeholder = "e.g. fas fa-docker"
+                    break;
                 case "Font Awesome 5 Brands":
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?o=r&m=free&f=brands"
                     document.getElementById('iconClass').placeholder = "e.g. fab fa-github"
@@ -121,6 +125,7 @@
 
     <!-- pre loading the fonts so they are available for the js class -->
     <div class="font_preload" style="opacity: 0">
+        <option value="Font Awesome 6.5.2">Font Awesome 6.5.2</option>
         <span style="font-family: 'Font Awesome 5 Free', Arial, sans-serif;"></span>
         <span style="font-family: 'Font Awesome 5 Brands', Arial, sans-serif;"></span>
         <span style="font-family: 'FontAwesome', Arial, sans-serif;"></span>
@@ -195,7 +200,7 @@
 
                 <div class="row">
                     <div class="column column-center">
-                        <label for="iconBackgroundColor">Icon Background Color</label>
+                        <label for="iconBackgroundColor">Icon Color</label>
                     </div>
                     <div class="column">
                         <input type="color" onchange="clickColor(0, -1, -1, 5)" value="#9b4dca"

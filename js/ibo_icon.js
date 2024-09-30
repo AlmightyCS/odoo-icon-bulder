@@ -22,10 +22,10 @@ class IBO_ICON {
     constructor(settings) {
 
         // set default parameter
-        this.font_color = "#ffffff";
+        this.font_color = "#9b4dca";
         this.font_family = "Font Awesome 5 Free";
         this.font_weight = "900";
-        this.icon_background = "#9b4dca";
+        this.icon_background = "#ffffff";
         this.icon_class = "fas fa-address-card";
         this.icon_width = "300";
         this.odoo_version = "13.0";
@@ -64,11 +64,11 @@ class IBO_ICON {
 
     _draw(element) {
         this._setUp();
-        this._setBackground();
-        this._setHardShadow();
+        //this._setBackground();
+        //this._setHardShadow();
         this._setTextWithShadow();
-        this._setInlineShadow();
-        this._setGradient();
+        //this._setInlineShadow();
+        //this._setGradient();
         document.getElementById(element).appendChild(this.canvas);
     }
 
@@ -276,9 +276,9 @@ class IBO_ICON {
             case "14.0":
             case "15.0":
                 this._ctx.shadowOffsetX = 0;
-                this._ctx.shadowOffsetY = this.icon_width * 0.02;
-                this._ctx.shadowBlur = 0;
-                this._ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+                //this._ctx.shadowOffsetY = this.icon_width * 0.02;
+                //this._ctx.shadowBlur = 0;
+                //this._ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
                 break;
             default:
                 console.log("Not supported version selected.");
